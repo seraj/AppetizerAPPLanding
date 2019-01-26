@@ -1,0 +1,383 @@
+@import "./scss/fonts.scss";
+
+html {
+    font-size: 10px;
+    font-family: iranyekan;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    direction: rtl;
+
+}
+
+body {
+    color: #656565;
+    font-family: iranyekan;
+    font-size: 14px;
+    line-height: 27px;
+    direction: rtl;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a:hover,
+a:visited,
+a:focus,
+a:active {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: #5a1544;
+    background: -webkit-gradient(left top, right top, color-stop(0%, #5a1544), color-stop(98%, #ec3185), color-stop(100%, #ec3185));
+    background: -webkit-gradient(linear, left top, right top, from(#5a1544), color-stop(98%, #ec3185), to(#ec3185));
+    background: linear-gradient(to right, #5a1544 0%, #ec3185 98%, #ec3185 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5a1544', endColorstr='#ec3185', GradientType=1);
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    border-radius: 28px;
+    padding: 15px 29px;
+    position: relative;
+
+    >span {
+        position: relative;
+    }
+
+    &:hover {
+        color: #190A32;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border-radius: 28px;
+        background: #fff;
+        opacity: 0;
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    &.hasIcon {
+        padding-right: 50px;
+    }
+
+    &.bordered {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #190A32;
+
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border-radius: 28px;
+            background: #fff;
+            opacity: 1;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+
+        &:hover {
+            &:before {
+                opacity: 0;
+            }
+
+            i {
+                &.icon {
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    i {
+        position: absolute;
+        right: 17px;
+        width: 22px;
+
+        &.icon {
+            svg {
+                fill: #d43c96;
+            }
+        }
+    }
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.app-landing {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+
+    &:before {
+        content: " ";
+        display: table;
+    }
+
+    .bg {
+        background: #fff url('static/img/bg.jpg') 90% top no-repeat;
+        padding-top: 70px;
+        overflow: hidden;
+    }
+
+    .content {
+        padding-top: 210px;
+
+        h3 {
+            margin: 0;
+            color: #190A32;
+            font-size: 42px;
+            line-height: 60px;
+            font-weight: 600;
+            margin-bottom: 11px;
+        }
+
+        p {
+            margin: 0;
+            color: #190A32;
+            font-size: 16px;
+            line-height: 30px;
+            margin-bottom: 54px;
+        }
+
+        .btn-download {
+            @extend .btn;
+            margin-bottom: 20px;
+            box-shadow: 0px 15px 30px rgba(212, 50, 151, 0.27);
+
+            &:hover {
+                color: #fff;
+                box-shadow: 0px 15px 30px rgba(212, 50, 151, 0.27);
+            }
+        }
+    }
+
+    .moc {
+        >img {
+            position: relative;
+            left: 175px;
+            width: 1000px;
+        }
+
+    }
+}
+
+.socials {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    a {
+        position: relative;
+        display: inline-block;
+        padding: 20px .75%;
+        text-decoration: none;
+        color: #190A32;
+        -webkit-transition: color 0.25s;
+        -moz-transition: color 0.25s;
+        -o-transition: color 0.25s;
+        -ms-transition: color 0.25s;
+        transition: color 0.25s;
+        margin-left: 20px;
+        width: 32px;
+
+        span {
+            position: absolute;
+            bottom: -30px;
+            right: -33px;
+            opacity: 0;
+            text-align: center;
+            transition: transform 0.25s, opacity 0.35s;
+            width: 100px;
+            transform: translateY(-4px)
+        }
+
+        &:hover {
+            span {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        &.telegram {
+            background: url('static/img/telegram.svg')center no-repeat;
+        }
+
+        &.twitter {
+            background: url('static/img/twitter.svg')center no-repeat;
+        }
+
+        &.instagram {
+            background: url('static/img/instagram.svg')center no-repeat;
+        }
+
+        &.blog {
+            background: url('static/img/blog.svg')center no-repeat;
+        }
+    }
+}
+
+@media (max-width: 1366px) {
+
+    .app-landing .bg {
+        background: #fff url('static/img/bg.jpg') center top no-repeat;
+        background-size: cover;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .btn {
+        &.bordered {
+
+            width: 49%;
+        }
+
+        width:100%;
+        text-align: center;
+    }
+
+    .app-landing {
+        .bg {
+            background-position: left;
+        }
+
+        .content {
+            padding-top: 10px;
+
+            h3,
+            p {
+                color: #fff;
+            }
+        }
+
+        .moc>img {
+            position: relative;
+            left: 270px;
+        }
+    }
+
+    .socials {
+        text-align: center;
+
+        a {
+            &.telegram {
+                background: url('static/img/telegram-mobile.svg')center no-repeat;
+            }
+
+            &.instagram {
+                background: url('static/img/instagram-mobile.svg')center no-repeat;
+            }
+
+            &.blog {
+                background: url('static/img/blog-mobile.svg')center no-repeat;
+            }
+        }
+    }
+}
+
+@media (max-width:450px) {
+    .app-landing {
+
+
+        .moc>img {
+            position: relative;
+            left: 295px;
+        }
+    }
+
+    .btn.hasIcon {
+        border-radius: 50px;
+        padding-right: 50px;
+        padding: 41px 0 7px;
+
+        &:before {
+            border-radius: 50px;
+        }
+
+        i {
+            top: 22px;
+            right: auto;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+    }
+}
+
+@media (max-width:400px) {
+    .app-landing {
+        .moc>img {
+            position: relative;
+            left: 275px;
+            width: 900px;
+        }
+    }
+
+    .btn {
+        &.bordered {
+
+            width: 100%;
+        }
+
+        width:100%;
+        text-align: center;
+    }
+}
+
+@media (max-width:340px) {
+    .app-landing {
+        .moc>img {
+            left: 265px;
+            width: 800px;
+        }
+    }
+}
+
+@import "./scss/loading.scss";
